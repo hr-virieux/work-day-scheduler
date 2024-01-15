@@ -6,9 +6,8 @@ $(function () {
 
   // Function to create a time block row for each hour
   const createTimeBlockRow = (hour) => {
-    // Get the current hour in 24-hour format for comparison
     const currentHour24 = dayjs().hour();
-    console.log('Current hour: ' + currentHour24); // Log current hour for debugging
+    console.log('Current hour: ' + currentHour24);
 
     // Determine whether the hour is in the past, present, or future
     let timeClass;
@@ -19,7 +18,7 @@ $(function () {
     } else {
       timeClass = 'future';
     }
-    console.log(`Creating row for hour ${hour} with class ${timeClass}`); // Log class assignment for debugging
+    console.log(`Creating row for hour ${hour} with class ${timeClass}`);
 
     // Create the time block row elements
     const timeBlockRow = $('<div>').addClass(`row time-block ${timeClass}`).attr('id', `hour-${hour}`);
@@ -51,7 +50,7 @@ $(function () {
     });
   };
 
-  // Initialize the scheduler by creating time blocks and enabling save functionality
+  // Initialise the scheduler by creating time blocks and enabling save functionality
   const initScheduler = () => {
     displayCurrentDate();
     // Clear any existing rows before creating new ones
